@@ -1,0 +1,386 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Mechsoft.PFSales.BusinessEntity;
+using Mechsoft.PFSales.BusinessManager;
+using log4net;
+using System.Reflection;
+using System.Data;
+using Mechsoft.GeneralUtilities;
+
+public partial class ManageActivities : BasePage
+{
+    #region Global Variables
+    Prospect objProsp = new Prospect();
+    ProspectBM objProspBM = new ProspectBM();
+    MasterBM objMstBM = new MasterBM();
+    EmployeeBM objEmpBM = new EmployeeBM();
+    Activity objActivity = new Activity();
+    ActivityBM objActivityBM = new ActivityBM();
+    ClearActivity objclrActivity = new ClearActivity();
+    ILog Logger = LogManager.GetLogger(typeof(ManageActivities));
+    #endregion
+
+    #region Events
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            ViewState[Cls_Constant.VIEWSTATE_SORTEXPRESSION2] = "start";
+            ViewState[Cls_Constant.VIEWSTATE_SORTDIRECTION2] = Cls_Constant.VIEWSTATE_DESC;
+            DropDownList ddlProspect = (DropDownList)UC_AddActivity1.FindControl("ddlProspect");
+            Label lblAddActProspect = (Label)UC_AddActivity1.FindControl("lblAddActProspect");
+            if (Request.QueryString["ProspectId"] != null && !string.IsNullOrEmpty(Request.QueryString["ProspectId"].ToString().Trim()))
+            {
+                hdfProspectId.Value = Request.QueryString["ProspectId"].ToString().Trim();
+                Int64 ProspId = Convert.ToInt64(hdfProspectId.Value.Trim());
+                BindMangeActivity(ProspId);
+                MethodInfo methods1 = UC_ProspectDetails1.GetType().GetMethod("BidData");
+                if (methods1 != null)
+                {
+                    object[] objParam = new object[] { ProspId };
+                    methods1.Invoke(UC_ProspectDetails1, objParam);
+                }
+                MethodInfo methods = UC_AddActivity1.GetType().GetMethod("ClearAll");
+                if (methods != null)
+                    methods.Invoke(UC_AddActivity1, null);
+                MethodInfo methods2 = UC_AddActivity1.GetType().GetMethod("clearMsg");
+                if (methods2 != null)
+                    methods2.Invoke(UC_AddActivity1, null);
+                HiddenField hdfActivityId = (HiddenField)UC_AddActivity1.FindControl("hdfActivityId");
+                HiddenField hdfActivityDoc = (HiddenField)UC_AddActivity1.FindControl("hdfActivityDoc");
+                HiddenField hdfAddActProspId = (HiddenField)UC_AddActivity1.FindControl("hdfProspectId");
+                Panel pnlDetails = (Panel)UC_AddActivity1.FindControl("pnlDetails");
+                Panel pnlGeneral = (Panel)UC_AddActivity1.FindControl("pnlGeneral");
+                LinkButton lnkbtnGeneralInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnGeneralInfo");
+                LinkButton lnkbtnDetailsInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnDetailsInfo");
+                LinkButton lnkbtnUpdate = (LinkButton)UC_AddActivity1.FindControl("lnkbtnUpdate");
+                LinkButton lnkbtnSaveAct = (LinkButton)UC_AddActivity1.FindControl("lnkbtnSaveAct");
+                LinkButton lnkbtnDownload = (LinkButton)UC_AddActivity1.FindControl("lnkbtnDownload");
+                LinkButton lnkbtnRemove = (LinkButton)UC_AddActivity1.FindControl("lnkbtnRemove");
+                FileUpload fpattachment = (FileUpload)UC_AddActivity1.FindControl("fpattachment");
+                Label prospName = (Label)UC_ProspectDetails1.FindControl("lblName");
+                if (hdfActivityId != null && hdfActivityDoc != null && hdfAddActProspId != null && pnlDetails != null && pnlGeneral != null && lnkbtnGeneralInfo != null && lnkbtnDetailsInfo != null && lnkbtnUpdate != null && lnkbtnSaveAct != null && lblAddActProspect != null && prospName != null && ddlProspect != null)
+                {
+                    pnlDetails.Visible = lnkbtnUpdate.Visible = false;
+                    lblAddActProspect.Visible = pnlGeneral.Visible = lnkbtnSaveAct.Visible = true;
+                    lnkbtnGeneralInfo.CssClass = "tablerBtnActive";
+                    lnkbtnDetailsInfo.CssClass = "";
+                    hdfActivityId.Value = "0";
+                    if (ProspId > 0)
+                        hdfAddActProspId.Value = Convert.ToString(ProspId);
+                    if (prospName != null && !string.IsNullOrEmpty(prospName.Text.Trim()))
+                        lblAddActProspect.Text = prospName.Text.Trim();
+                    ddlProspect.Visible = false;
+                }
+                hdfActivityDoc.Value = string.Empty;//lnkbtnDownload.CommandArgument = lnkbtnRemove.CommandArgument =
+            }
+            else
+            {
+                if (ddlProspect != null && lblAddActProspect != null)
+                {
+                    ddlProspect.Visible = true;
+                    lblAddActProspect.Visible = false;
+                }
+                if (Request.QueryString["TimeRange"] != null && !string.IsNullOrEmpty(Request.QueryString["TimeRange"].ToString().Trim()))
+                {
+                    hdfProspectId.Value = "0";
+                    Int64 ProspId = 0;
+                    MethodInfo methods = UC_AddActivity1.GetType().GetMethod("ClearAll");
+                    if (methods != null)
+                        methods.Invoke(UC_AddActivity1, null);
+                    MethodInfo methods2 = UC_AddActivity1.GetType().GetMethod("clearMsg");
+                    if (methods2 != null)
+                        methods2.Invoke(UC_AddActivity1, null);
+                    HiddenField hdfActivityId = (HiddenField)UC_AddActivity1.FindControl("hdfActivityId");
+                    HiddenField hdfActivityDoc = (HiddenField)UC_AddActivity1.FindControl("hdfActivityDoc");
+                    HiddenField hdfAddActProspId = (HiddenField)UC_AddActivity1.FindControl("hdfProspectId");
+                    Panel pnlDetails = (Panel)UC_AddActivity1.FindControl("pnlDetails");
+                    Panel pnlGeneral = (Panel)UC_AddActivity1.FindControl("pnlGeneral");
+                    LinkButton lnkbtnGeneralInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnGeneralInfo");
+                    LinkButton lnkbtnDetailsInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnDetailsInfo");
+                    LinkButton lnkbtnUpdate = (LinkButton)UC_AddActivity1.FindControl("lnkbtnUpdate");
+                    LinkButton lnkbtnSaveAct = (LinkButton)UC_AddActivity1.FindControl("lnkbtnSaveAct");
+                    LinkButton lnkbtnDownload = (LinkButton)UC_AddActivity1.FindControl("lnkbtnDownload");
+                    LinkButton lnkbtnRemove = (LinkButton)UC_AddActivity1.FindControl("lnkbtnRemove");
+                    FileUpload fpattachment = (FileUpload)UC_AddActivity1.FindControl("fpattachment");
+                    Label prospName = (Label)UC_ProspectDetails1.FindControl("lblName");
+                    TextBox txtActTime = (TextBox)UC_AddActivity1.FindControl("txtActTime");
+                    TextBox txtActDate = (TextBox)UC_AddActivity1.FindControl("txtActDate");
+                    if (hdfActivityId != null && hdfActivityDoc != null && hdfAddActProspId != null && pnlDetails != null && pnlGeneral != null && lnkbtnGeneralInfo != null && lnkbtnDetailsInfo != null && lnkbtnUpdate != null && lnkbtnSaveAct != null && lblAddActProspect != null && prospName != null && ddlProspect != null)
+                    {
+                        lblAddActProspect.Visible = pnlDetails.Visible = lnkbtnUpdate.Visible = false;
+                        ddlProspect.Visible = pnlGeneral.Visible = lnkbtnSaveAct.Visible = true;
+                        lnkbtnGeneralInfo.CssClass = "tablerBtnActive";
+                        lnkbtnDetailsInfo.CssClass = "";
+                        hdfActivityId.Value = "0";
+                        if (ProspId > 0)
+                            hdfAddActProspId.Value = Convert.ToString(ProspId);
+                        if (prospName != null && !string.IsNullOrEmpty(prospName.Text.Trim()))
+                            lblAddActProspect.Text = prospName.Text.Trim();
+                        if (txtActDate != null && txtActTime != null)
+                        {
+                            txtActDate.Text = Convert.ToDateTime(Request.QueryString["TimeRange"].ToString().Trim()).ToString("dd/MM/yyyy").Substring(0, 10);
+                            txtActTime.Text = Convert.ToDateTime(Request.QueryString["TimeRange"].ToString().Trim()).ToString("HH:mm:ss").Substring(0, 5);
+                        }
+                        ddlProspect.Focus();
+                    }
+                    hdfActivityDoc.Value = string.Empty;
+                }
+                else if (Request.QueryString["EventId"] != null && !string.IsNullOrEmpty(Request.QueryString["EventId"].ToString().Trim()))
+                {
+                    hdfProspectId.Value = "0";
+                    MethodInfo methods = UC_AddActivity1.GetType().GetMethod("ClearAll");
+                    if (methods != null)
+                        methods.Invoke(UC_AddActivity1, null);
+                    MethodInfo methods2 = UC_AddActivity1.GetType().GetMethod("clearMsg");
+                    if (methods2 != null)
+                        methods2.Invoke(UC_AddActivity1, null);
+                    Panel pnlDetails = (Panel)UC_AddActivity1.FindControl("pnlDetails");
+                    Panel pnlGeneral = (Panel)UC_AddActivity1.FindControl("pnlGeneral");
+                    HiddenField hdfActivityId = (HiddenField)UC_AddActivity1.FindControl("hdfActivityId");
+                    DropDownList ddlAddActType = (DropDownList)UC_AddActivity1.FindControl("ddlAddActType");
+                    LinkButton lnkbtnGeneralInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnGeneralInfo");
+                    LinkButton lnkbtnDetailsInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnDetailsInfo");
+                    LinkButton lnkbtnUpdate = (LinkButton)UC_AddActivity1.FindControl("lnkbtnUpdate");
+                    LinkButton lnkbtnSaveAct = (LinkButton)UC_AddActivity1.FindControl("lnkbtnSaveAct");
+                    Label lblAddActivity = (Label)UC_AddActivity1.FindControl("lblAddActivity");
+                    if (pnlDetails != null && pnlGeneral != null && lnkbtnGeneralInfo != null && lnkbtnDetailsInfo != null && lnkbtnUpdate != null && lnkbtnSaveAct != null && lblAddActivity != null && ddlAddActType != null && hdfActivityId != null)
+                    {
+                        hdfActivityId.Value = Request.QueryString["EventId"].ToString().Trim();
+                        ddlProspect.Visible = lnkbtnUpdate.Visible = true;
+                        lblAddActProspect.Visible = pnlDetails.Visible = lnkbtnSaveAct.Visible = false;
+                        lnkbtnGeneralInfo.CssClass = "tablerBtnActive";
+                        lnkbtnDetailsInfo.CssClass = "";
+                        lblAddActivity.Text = Resources.PFSalesResource.updateactivity.Trim();
+                        MethodInfo methods1 = UC_AddActivity1.GetType().GetMethod("EditData");
+                        if (methods1 != null)
+                            methods1.Invoke(UC_AddActivity1, null);
+                        ddlProspect.Focus();
+                    }
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 15 July 2013
+    /// Description: Row Data Bound Event Of Manage Activity's Grid
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void gvActivity_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        try
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                HiddenField hdfClrId = (HiddenField)e.Row.FindControl("hdfClrId");
+                LinkButton lnkbtnClearActDet = (LinkButton)e.Row.FindControl("lnkbtnClearActDet");
+                if (hdfClrId != null && lnkbtnClearActDet != null)
+                {
+                    if (!string.IsNullOrEmpty(hdfClrId.Value) && Convert.ToInt64(hdfClrId.Value) > 0)
+                    {
+                        lnkbtnClearActDet.Enabled = false;
+                        lnkbtnClearActDet.ToolTip = Resources.PFSalesResource.ClearedActivity.Trim();
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Error(ex.Message + "SearchProspect.gvActivity_RowDataBound.Error:" + ex.StackTrace);
+        }
+    }
+
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 2 July 2013
+    /// Description: Show the pop up for clearing the activity
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void lnkbtnClearActDet_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            HiddenField hdfclrActId = (HiddenField)UC_ClearActivity1.FindControl("hdfclrActId");
+            HiddenField hdfclrActProsp = (HiddenField)UC_ClearActivity1.FindControl("hdfclrActProsp");
+            Label lblName = (Label)UC_ProspectDetails1.FindControl("lblName");
+            HiddenField hdfProspStatus = (HiddenField)UC_ProspectDetails1.FindControl("hdfProspStatus");
+            if (hdfclrActId != null && hdfclrActProsp != null && lblName != null && hdfProspStatus != null)
+            {
+                hdfclrActId.Value = ((LinkButton)sender).CommandArgument.Trim();
+                hdfclrActProsp.Value = hdfProspectId.Value.Trim();
+                MethodInfo methods1 = UC_ClearActivity1.GetType().GetMethod("BindClearData");
+                if (methods1 != null)
+                {
+                    object[] objParam = new object[] { lblName.Text.Trim(), hdfProspStatus };
+                    methods1.Invoke(UC_ClearActivity1, objParam);
+                    pnlClearAct.Visible = true;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Error(ex.Message + "SearchProspect.lnkbtnClearActDet_Click.Error:" + ex.StackTrace);
+        }
+    }
+
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 15 July 2013
+    /// Description: Close the pop up of clearing the activity
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void lnkClearActClose_Click(object sender, EventArgs e)
+    {
+        pnlClearAct.Visible = false;
+        MethodInfo methods = UC_ClearActivity1.GetType().GetMethod("ClearAll");
+        if (methods != null)
+            methods.Invoke(UC_ClearActivity1, null);
+        BindMangeActivity(Convert.ToInt64(hdfProspectId.Value.Trim()));
+    }
+
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 16 July 2013
+    /// Description: Button Click Event Of Close Manage Activity Pop Up. 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void lnkbtnViewActDet_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            HiddenField hdfActivityId = (HiddenField)UC_AddActivity1.FindControl("hdfActivityId");
+            hdfActivityId.Value = ((LinkButton)sender).CommandArgument.Trim();
+            HiddenField hdfClrId = (HiddenField)(((GridViewRow)((LinkButton)sender).NamingContainer).FindControl("hdfClrId"));
+            Label prospName = (Label)UC_ProspectDetails1.FindControl("lblName");
+            if (hdfClrId != null && !string.IsNullOrEmpty(hdfClrId.Value.Trim()) && Convert.ToInt64(hdfClrId.Value.Trim()) > 0 && prospName != null)
+            {
+
+                MethodInfo methods1 = UC_ClearActivityDetails1.GetType().GetMethod("Binddata");
+                if (methods1 != null)
+                {
+                    object[] objParam = new object[] { Convert.ToInt64(hdfActivityId.Value.Trim()), prospName.Text };
+                    methods1.Invoke(UC_ClearActivityDetails1, objParam);
+                    pnlClearActDeatils.Visible = true;
+                }
+            }
+            else
+            {
+                MethodInfo methods2 = UC_AddActivity1.GetType().GetMethod("clearMsg");
+                if (methods2 != null)
+                    methods2.Invoke(UC_AddActivity1, null);
+                MethodInfo methods = UC_AddActivity1.GetType().GetMethod("ClearAll");
+                if (methods != null)
+                    methods.Invoke(UC_AddActivity1, null);
+                Panel pnlDetails = (Panel)UC_AddActivity1.FindControl("pnlDetails");
+                Panel pnlGeneral = (Panel)UC_AddActivity1.FindControl("pnlGeneral");
+                DropDownList ddlAddActType = (DropDownList)UC_AddActivity1.FindControl("ddlAddActType");
+                LinkButton lnkbtnGeneralInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnGeneralInfo");
+                LinkButton lnkbtnDetailsInfo = (LinkButton)UC_AddActivity1.FindControl("lnkbtnDetailsInfo");
+                LinkButton lnkbtnUpdate = (LinkButton)UC_AddActivity1.FindControl("lnkbtnUpdate");
+                LinkButton lnkbtnSaveAct = (LinkButton)UC_AddActivity1.FindControl("lnkbtnSaveAct");
+                Label lblAddActivity = (Label)UC_AddActivity1.FindControl("lblAddActivity");
+                if (pnlDetails != null && pnlGeneral != null && lnkbtnGeneralInfo != null && lnkbtnDetailsInfo != null && lnkbtnUpdate != null && lnkbtnSaveAct != null && lblAddActivity != null && ddlAddActType != null)
+                {
+                    GridViewRow GrRow = ((GridViewRow)((LinkButton)sender).NamingContainer);
+                    Int64 LeadId = Convert.ToInt64(((LinkButton)sender).CommandArgument.Trim());
+                    Label lblAddActProspect = (Label)UC_AddActivity1.FindControl("lblAddActProspect");
+                    lnkbtnUpdate.Visible = true;
+                    pnlDetails.Visible = lnkbtnSaveAct.Visible = false;
+                    lnkbtnGeneralInfo.CssClass = "tablerBtnActive";
+                    lnkbtnDetailsInfo.CssClass = "";
+                    lblAddActivity.Text = Resources.PFSalesResource.updateactivity.Trim();
+                    lblAddActProspect.Text = prospName.Text.Trim();
+                    MethodInfo methods1 = UC_AddActivity1.GetType().GetMethod("EditData");
+                    if (methods1 != null)
+                        methods1.Invoke(UC_AddActivity1, null);
+                    ddlAddActType.Focus();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Error(ex.Message + "SearchProspect.lnkbtnViewActDet_Click.Error:" + ex.StackTrace);
+        }
+    }
+
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 16 July 2013
+    /// Description: Close Clear Activity Details Pop Up
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void lnkbtnClearActDetClose_Click(object sender, EventArgs e)
+    {
+        pnlClearAct.Visible = pnlClearActDeatils.Visible = false;
+    }
+
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 16 July 2013
+    /// Description: Close Clear Activity Details Pop Up
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void lnkbtnBack_Click(object sender, EventArgs e)
+    {
+        if (Request.QueryString["ProspectId"] != null && !string.IsNullOrEmpty(Request.QueryString["ProspectId"].ToString().Trim()))
+        {
+            Response.Redirect("SearchProspect.aspx");
+        }
+        else if (Request.QueryString["TimeRange"] != null && !string.IsNullOrEmpty(Request.QueryString["TimeRange"].ToString().Trim()))
+        {
+            Response.Redirect("ActivityCall.aspx");
+        }
+        else if (Request.QueryString["EventId"] != null && !string.IsNullOrEmpty(Request.QueryString["EventId"].ToString().Trim()))
+        {
+            Response.Redirect("ActivityCall.aspx");
+        }
+    }
+    #endregion
+
+    #region Methods
+    /// <summary>
+    /// Created By: Pravin Gholap
+    /// Created Date: 15 July 2013
+    /// Description: Bind Managed Activity Data
+    /// </summary>
+    /// <param name="ProspectId"></param>
+    public void BindMangeActivity(Int64 ProspectId)
+    {
+        try
+        {
+            if (ProspectId > 0)
+            {
+                DataTable Dt = objActivityBM.GetActivityOfProspect(ProspectId);
+                if (Dt != null & Dt.Rows.Count > 0)
+                {
+                    DataView dV = Dt.DefaultView;
+                    dV.Sort = string.Format("{0} {1}", ViewState[Cls_Constant.VIEWSTATE_SORTEXPRESSION2].ToString(), ViewState[Cls_Constant.VIEWSTATE_SORTDIRECTION2].ToString());
+                    gvActivity.DataSource = Dt;
+                    gvActivity.DataBind();
+                }
+                else
+                {
+                    gvActivity.DataSource = null;
+                    gvActivity.DataBind();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Error(ex.Message + "SearchProspect.lnkbtnManageAct_Click.Error:" + ex.StackTrace);
+        }
+    }
+    #endregion
+}

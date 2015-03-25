@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="PFSales">
+</Property><Property Name="Solution File" Value="E:\New Source Code\Source Code\CRM\PFSales\PFSales.sln">
+</Property><Property Name="Date" Value="Wednesday, 25 March 2015">
+</Property><Property Name="Time" Value="9:57 AM">
+</Property></Properties><Event ErrorLevel="0" Project="Mechsoft.PFSales.BusinessEntity" Source="Mechsoft.PFSales.BusinessEntity\Mechsoft.PFSales.BusinessEntity.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Mechsoft.PFSales.BusinessEntity" Source="Mechsoft.PFSales.BusinessEntity\Mechsoft.PFSales.BusinessEntity.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Mechsoft.PFSales.DataAccess" Source="Mechsoft.PFSales.DataAccess\Mechsoft.PFSales.DataAccess.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Mechsoft.PFSales.DataAccess" Source="Mechsoft.PFSales.DataAccess\Mechsoft.PFSales.DataAccess.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Mechsoft.PFSales.BusinessManager" Source="Mechsoft.PFSales.BusinessManager\Mechsoft.PFSales.BusinessManager.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Mechsoft.PFSales.BusinessManager" Source="Mechsoft.PFSales.BusinessManager\Mechsoft.PFSales.BusinessManager.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="PFSales.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="PFSales.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Mechsoft.PFSales.BusinessEntity" Source="Mechsoft.PFSales.BusinessEntity\Mechsoft.PFSales.BusinessEntity.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Mechsoft.PFSales.DataAccess" Source="Mechsoft.PFSales.DataAccess\Mechsoft.PFSales.DataAccess.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Mechsoft.PFSales.BusinessManager" Source="Mechsoft.PFSales.BusinessManager\Mechsoft.PFSales.BusinessManager.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

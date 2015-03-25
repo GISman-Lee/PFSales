@@ -1,0 +1,125 @@
+<%@ Page Title="<%$Resources:PFSalesResource,ManageActivities %>" Language="C#" MasterPageFile="~/PFSalesMaster.master"
+    AutoEventWireup="true" CodeFile="ManageActivities.aspx.cs" Inherits="ManageActivities" %>
+
+<%@ Register Src="UserControls/UC_AddActivity.ascx" TagName="UC_AddActivity" TagPrefix="uc1" %>
+<%@ Register Src="UserControls/UC_ProspectDetails.ascx" TagName="UC_ProspectDetails"
+    TagPrefix="uc1" %>
+<%@ Register Src="UserControls/UC_ClearActivity.ascx" TagName="UC_ClearActivity"
+    TagPrefix="uc2" %>
+<%@ Register Src="UserControls/UC_ClearActivityDetails.ascx" TagName="UC_ClearActivityDetails"
+    TagPrefix="uc4" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <%--   <asp:UpdatePanel ID="UpPanPrspect" runat="server">
+        <ContentTemplate>--%>
+            <div class="innerHeader">
+                <img src="images/Bullate.jpg" alt="icon Img" />
+                <asp:Label ID="prospDetHead" runat="server" Text="<%$Resources:PFSalesResource,ManageActivities %>"></asp:Label>
+                <div class="addBtn">
+                    <asp:LinkButton ID="lnkbtnBack" runat="server" ToolTip="<%$Resources:PFSalesResource,Back %>"
+                        OnClick="lnkbtnBack_Click">
+                        <asp:Image ID="imgBack" ImageUrl="~/Images/back.png" runat="server" />
+                        <asp:Label ID="lblBack" runat="server" Text="<%$Resources:PFSalesResource,Back %>"></asp:Label></asp:LinkButton></div>
+            </div>
+            <div class="dilContener">
+                <b style="float: left; font-size: 16px; margin-bottom: 10px;">
+                    <asp:Label ID="lblHistoryHead" runat="server" Text="<%$Resources:PFSalesResource,EnquiryDetails %>"></asp:Label>
+                </b>
+                <uc1:UC_ProspectDetails ID="UC_ProspectDetails1" runat="server" />
+                <div>
+                    <uc1:UC_AddActivity ID="UC_AddActivity1" runat="server" />
+                </div>
+                <b style="float: left; font-size: 16px; margin-bottom: 10px;">
+                    <asp:Label ID="lblOldActDetHead" runat="server" Text="<%$Resources:PFSalesResource,Summary %>"></asp:Label>
+                </b>
+                <asp:Panel ID="pnlMangActGrid" runat="server" ScrollBars="Vertical" Height="300px"
+                    Style="margin-top: 15px;" Width="100%">
+                    <asp:GridView ID="gvActivity" runat="server" CellSpacing="0" Width="100%" CellPadding="0"
+                        border="0" class="tableGride" PagerStyle-CssClass="footerpaging" GridLines="None"
+                        AutoGenerateColumns="false" rule="none" OnRowDataBound="gvActivity_RowDataBound">
+                        <Columns>
+                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,ActivityStatus %>" SortExpression="Status">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblActStatus" runat="server" Text='<%#Bind("ActStatus") %>'></asp:Label>
+                                    <asp:HiddenField ID="hdfClrId" runat="server" Value='<%#Bind("ClearId") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,ActDetails %>" SortExpression="start">
+                                <ItemTemplate>
+                                    <b>
+                                        <asp:Literal ID="ltrActivity" runat="server" Text="Activity:"></asp:Literal></b><asp:Label
+                                            ID="lblActReg" runat="server" Text='<%#Bind("name") %>'></asp:Label>
+                                    <br />
+                                    <b>
+                                        <asp:Literal ID="ltrStartTime" runat="server" Text="Start Time:"></asp:Literal></b><asp:Label
+                                            ID="lblStartDtTime" runat="server" Text='<%#Bind("start") %>'></asp:Label><br />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,RemarkBeforeAct %>" Visible="false">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblRemBeforeAct" runat="server" Text='<%#Bind("RemarkBeforeAct") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,RemarkAfterAct %>">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblRemAfterAct" runat="server" Text='<%#Bind("RemarkAfterAct") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,Details %>">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnkbtnViewActDet" runat="server" ToolTip="<%$Resources:PFSalesResource,ViewActDetails %>"
+                                        CommandArgument='<%#Eval("Id") %>' OnClick="lnkbtnViewActDet_Click">
+                                               <img width="20px" height="21px" src="Images/viewDetails.png"/>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,ClearAct %>">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnkbtnClearActDet" runat="server" ToolTip="<%$Resources:PFSalesResource,ClearAct %>"
+                                        CommandArgument='<%#Eval("Id") %>' OnClick="lnkbtnClearActDet_Click">
+                                               <img width="20px" height="21px" src="Images/c.png"/>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <EmptyDataTemplate>
+                            <div align="center">
+                                <asp:Label ID="lblNoDataFound" runat="server" Text="<%$Resources:PFSalesResource,NoDataFound %>"></asp:Label>
+                            </div>
+                        </EmptyDataTemplate>
+                    </asp:GridView>
+                </asp:Panel>
+                <asp:Panel ID="pnlClearAct" runat="server" Visible="false">
+                    <div class="pop-up" style="z-index: 10015;">
+                    </div>
+                    <div class="contentPopUp" style="margin-left: -75%; top: 12px; width: 505px; z-index: 10020;">
+                        <div class="popHeader">
+                            <asp:Label ID="lblClearActHead" runat="server" Text="<%$ Resources:PFSalesResource,ClearAct%>"></asp:Label>
+                            <asp:LinkButton ID="lnkClearActClose" runat="server" ToolTip="<%$ Resources:PFSalesResource,Close %>"
+                                OnClick="lnkClearActClose_Click"><img src="Images/delete.png" style="padding-top:7px; padding-right:12px;"/></asp:LinkButton>
+                        </div>
+                        <uc2:UC_ClearActivity ID="UC_ClearActivity1" runat="server" />
+                    </div>
+                </asp:Panel>
+                <asp:Panel ID="pnlClearActDeatils" runat="server" Visible="false">
+                    <div class="pop-up" style="z-index: 10025;">
+                    </div>
+                    <div class="contentPopUp" style="margin-left: -75%; top: 12px; width: 505px; z-index: 10030;">
+                        <div class="popHeader">
+                            <asp:Label ID="lblClearActDetHead" runat="server" Text="<%$ Resources:PFSalesResource,ClearActDet%>"></asp:Label>
+                            <asp:LinkButton ID="lnkbtnClearActDetClose" runat="server" ToolTip="<%$ Resources:PFSalesResource,Close %>"
+                                OnClick="lnkbtnClearActDetClose_Click"><img src="Images/delete.png" style="padding-top:7px; padding-right:12px;"/></asp:LinkButton>
+                        </div>
+                        <uc4:UC_ClearActivityDetails ID="UC_ClearActivityDetails1" runat="server" />
+                    </div>
+                </asp:Panel>
+                <div class="headText">
+                </div>
+                <asp:HiddenField ID="hdfSelProspId" runat="server" />
+                <asp:HiddenField ID="hdfManProspStatusId" runat="server" />
+            </div>
+            <asp:HiddenField ID="hdfProspectId" runat="server" Value="0" />
+        <%--</ContentTemplate>
+    </asp:UpdatePanel>--%>
+</asp:Content>

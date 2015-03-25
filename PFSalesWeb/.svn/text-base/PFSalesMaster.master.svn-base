@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PFSalesMaster.master.cs"
+    Inherits="PFSalesMaster" %>
+
+<%@ Register Src="UserControls/UC_Header.ascx" TagName="UC_Header" TagPrefix="uc1" %>
+<%--<%@ Register Src="~/UserControls/UC_AddEditContact.ascx" TagName="AddEditContact"
+    TagPrefix="uc2" %>--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <%--1 Aug 2013 : For IE 10 Logout button click issue--%>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <script src="js/jquery.megamenu.js" type="text/javascript"></script>
+
+    <script src="js/SessionWarningTimer.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        jQuery(function() {
+            var SelfLocation = window.location.href.split('?');
+            switch (SelfLocation[1]) {
+                case "justify_right":
+                    jQuery(".megamenu").megamenu({ 'justify': 'right' });
+                    break;
+                case "justify_left":
+                default:
+                    jQuery(".megamenu").megamenu();
+            }
+        });
+        function CheckAllGridCheckbox(gridName, allcheckboxid, internalcheckboxname) {
+            objgridName = document.getElementsByName(gridName);
+
+            temp = allcheckboxid.split('_ctl01')
+            var TargetBaseControl = document.getElementById(temp[0]);
+            var TargetChildControl = internalcheckboxname
+            var Inputs = TargetBaseControl.getElementsByTagName("input");
+            //Checked/Unchecked all the checkBoxes in side the GridView.
+            for (var n = 0; n < Inputs.length; ++n) {
+                if (Inputs[n].type == 'checkbox' && Inputs[n].id.indexOf(TargetChildControl, 0) >= 0) {
+
+                    if (document.getElementById(allcheckboxid).checked == true) {
+                        Inputs[n].checked = true;
+                    }
+                    else {
+                        Inputs[n].checked = false;
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/jquery.megamenu.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ajax:ToolkitScriptManager ID="Scripty" runat="server">
+    </ajax:ToolkitScriptManager>
+    <div id="wrapper">
+        <!--Header-->
+        <div class="header">
+            <asp:LinkButton ID="lnkbtnDashBoard" runat="server" OnClick="lnkbtnDashBoard_Click"
+                ToolTip="<%$Resources:PFSalesResource,GotoDashBoard  %>">
+            <div class="logo">
+            </div></asp:LinkButton>
+            <div class="banner">
+            </div>
+            <span class="loggedInUserInfo">
+                <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
+                |
+                <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>
+            </span>
+            <div class="clear">
+            </div>
+        </div>
+        <!--Header-->
+        <!--Menu-->
+        <uc1:UC_Header ID="UC_Header1" runat="server" />
+        <!--Menu-->
+        <!--Content Main-->
+        <div class="maincontaint">
+            <div style="margin: 7px 0px 5px 10px;">
+                <asp:UpdatePanel ID="UpPanShortCuts" runat="server">
+                    <ContentTemplate>
+                        <div style="float: left; padding-right: 3px;">
+                            <asp:LinkButton ID="lnkbtnGotoDashBoard" runat="server" ToolTip="<%$Resources:PFSalesResource,gotoDash %>"
+                                OnClick="lnkbtnGotoDashBoard_Click" Visible="false"><img src="Images/dashboard.png"/></asp:LinkButton>
+                            <asp:LinkButton ID="lnkbtnAddProspect" runat="server" ToolTip="<%$Resources:PFSalesResource,Addprospect %>"
+                                OnClick="lnkbtnAddProspect_Click" Visible="false"><img src="Images/addContact.png"/></asp:LinkButton>
+                            <asp:LinkButton ID="lnkbtnProspectList" runat="server" ToolTip="<%$Resources:PFSalesResource,ProspectList %>"
+                                OnClick="lnkbtnProspectList_Click" Visible="false"><img src="Images/contactList.png"/></asp:LinkButton>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:LinkButton ID="lnkbtnRefresh" Style="float: left;" runat="server" ToolTip="<%$Resources:PFSalesResource,Refresh %>"
+                    OnClick="lnkbtnRefresh_Click"><img src="Images/refreshDash.png" height="24px" width="24px" /></asp:LinkButton>
+                <%--<asp:ImageButton ID="ImageButton2" ImageUrl="~/Images/addProspects.png" runat="server" />
+                <asp:ImageButton ID="ImageButton4" ImageUrl="~/Images/prospectList.png" runat="server" />--%>
+            </div>
+            <asp:Panel ID="pnlContentPlace" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <asp:Panel ID="pnlAddContact" runat="server" Visible="false">
+                        <div class="pop-up" style="z-index: 10025;">
+                        </div>
+                        <div class="contentPopUp" style="z-index: 10030; margin-left: -88%; top: 1%; width: 77%;">
+                            <div class="popHeader">
+                                <asp:Label ID="lblAddContactHead" runat="server" Text="<%$ Resources:PFSalesResource,AddProspectDetails%>"></asp:Label>
+                                <asp:LinkButton ID="lnkbtnAddContactClose" runat="server" ToolTip="<%$ Resources:PFSalesResource,Close %>"
+                                    OnClick="lnkbtnAddContactClose_Click"><img src="Images/delete.png" style="padding-top:7px; padding-right:12px;"/></asp:LinkButton>
+                            </div>
+                            <div style="overflow-y: scroll; height: 550px; width: 100%">
+                                <%--<uc2:AddEditContact ID="UC_AddEditContact1" runat="server" />--%>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </asp:ContentPlaceHolder>
+            </asp:Panel>
+            <asp:Panel ID="pnlNoAccess" runat="server" Visible="false">
+                <div style="margin: 0 auto; text-align: center;" runat="server" id="divNoAccess"
+                    visible="true">
+                    <div class="box_bg">
+                        <div style="float: right;">
+                            <%--<asp:LinkButton runat="server" ID="lbtnDefault" OnClick="imgLogo_Click" Text="Back"></asp:LinkButton>--%>
+                        </div>
+                        <div class="mase_icon">
+                            <img src="Images/no_access.png" alt="" />
+                        </div>
+                        <div class="mase_text">
+                            <asp:Literal runat="server" ID="lblInvalidAccess" Text="<%$Resources:PFSalesResource,UnAuthorizedAccess %>"></asp:Literal>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:UpdatePanel ID="upnlAlert" runat="server">
+                <ContentTemplate>
+                    <div id="dvAlert" runat="server" visible="false">
+                        <div class="popMainAll">
+                            <div class="popMain">
+                                <div class="popAlertHeader">
+                                    <asp:Image ID="imgAccountMaster" Style="float: left" ImageUrl="~/Images/alertPop.png"
+                                        runat="server" />
+                                    <div class="popButton">
+                                        <asp:LinkButton ID="lnkbtnMinimize" runat="server" ToolTip="<%$Resources:PFSalesResource,minimize %>"
+                                            OnClick="lnkbtnMinimize_Click" CommandArgument='<% #Bind("Id") %>'>
+                                            <asp:Image ID="imgMinimise" runat="server" ImageUrl="~/Images/minimizePop.png" />
+                                        </asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnClose" runat="server" OnClick="lnkClose_Click" ToolTip="<%$Resources:PFSalesResource,Close %>"
+                                            CommandArgument='<% #Bind("Id") %>'>
+                                            <asp:Image ID="imgClose" runat="server" ImageUrl="~/Images/deletePop.png" /></asp:LinkButton>
+                                    </div>
+                                </div>
+                                <asp:Panel ID="pnldiv" runat="server" Style="float: left; margin: 5px 8px;">
+                                    <dl class="contentComPopMain">
+                                        <dt style="width: 100%;">
+                                            <asp:LinkButton ID="lnkBtnProspName" runat="server" Text='<% #Bind("ProspectName") %>'
+                                                ToolTip="<%$Resources:PFSalesResource,ViewProspDetails %>" CommandArgument='<% #Bind("ProspectId") %>'
+                                                OnClick="lnkBtnProspName_Click"></asp:LinkButton>
+                                        </dt>
+                                        <dt style="width: 100%; padding-left: 125px;">
+                                            <asp:LinkButton ID="lnkPrevAlert" runat="server" Text="<%$Resources:PFSalesResource,Previous %>"
+                                                OnClick="lnkPrevAlert_Click" Visible="false"></asp:LinkButton>
+                                            <asp:LinkButton ID="lnkNextAlert" runat="server" Text="<%$Resources:PFSalesResource,Next %>"
+                                                OnClick="lnkNextAlert_Click" Visible="false"></asp:LinkButton>
+                                        </dt>
+                                        <dt style="width: 100%;">
+                                            <asp:Label ID="ActivityName" runat="server" Text='<% #Bind("Alert") %>'></asp:Label>
+                                        </dt>
+                                        <dt style="width: 100%;">
+                                            <asp:Label ID="lblActDesc" runat="server" Text='<% #Bind("Description") %>'></asp:Label>
+                                        </dt>
+                                        <dt>
+                                            <asp:Label ID="lblAccountFor" runat="server" Text="<%$Resources:PFSalesResource,StartDateHead %>"></asp:Label>
+                                        </dt>
+                                        <dd>
+                                            <asp:Label ID="lblStartTime" runat="server" Text='<% #Bind("StartDate") %>'></asp:Label>
+                                        </dd>
+                                        <dt>
+                                            <asp:Label ID="lblEnDate" runat="server" Text="<%$Resources:PFSalesResource,EndDateHead %>"></asp:Label>
+                                        </dt>
+                                        <dd>
+                                            <asp:Label ID="lblEndTime" runat="server" Text='<% #Bind("EndDate") %>'></asp:Label>
+                                        </dd>
+                                        <asp:HiddenField ID="hdfAlertType" runat="server" Value='<% #Bind("alerttypeid") %>' />
+                                        <asp:HiddenField ID="hdfActivityId" runat="server" Value='<% #Bind("ActivityId") %>' />
+                                    </dl>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <!--Content Main-->
+        <div class="clear">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,1187 @@
+/*______________Wrapper_Content______________*/
+#wrapper
+{
+    width: 1000px;
+    margin: 0 auto;	
+    border: 1px solid #ccc;
+}
+.header
+{
+    width: 100%;
+    height: auto;
+}
+.logo
+{
+    width: 298px;
+    height: 9.08em;
+    float: left;
+    background: url(../images/Private_fleet_logo.jpg) no-repeat left top;
+}
+.dilContenerTwo .headText
+{
+    margin: 0px 0px 5px 0px;
+}
+.errorMsg
+{
+    color: Red !important;
+    float: left;
+    font-size: 11px !important;
+    line-height: normal !important;
+    width: 100%;
+}
+.tableGrideBorderRemove th, .tableGrideBorderRemove
+{
+    border-width: 0px !important;
+    margin-bottom: 15px !important;
+    margin-top: 0px !important;
+}
+.Mandatory
+{
+    color: Red;
+    float: right;
+    margin-bottom: -18px;
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 10px;
+    position: relative;
+}
+.banner
+{
+    height: 9.08em;
+    width: 702px;
+    float: right;
+    background: #f9f9f9 url(../images/Banner.png) no-repeat right top;
+}
+.topnavd
+{
+    background: url(../images/Nav_bg.jpg) repeat-x left top;
+    height: 2.6em;
+    width: 100%;
+}
+.logout
+{
+    float: right;
+}
+.logout a
+{
+    float: left;
+    height: 1.4em;
+    width: 4.5em;
+    padding: 0.7em 0 0 1.8em;
+    background: url(../images/Logout.gif) no-repeat left top;
+    display: block;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 100%;
+    margin: 0 0.3em 0 0;
+    cursor: pointer;
+}
+.logout a:hover
+{
+    color: #FFFFFF;
+}
+.addBtn
+{
+    float: right;
+}
+.addBtn img, .addBtn a
+{
+    float: left;
+}
+.popUpViewBtn, .popUpViewBtn a
+{
+    float: left;
+}
+.popUpViewBtn a
+{
+    background-color: #e9e9e9;
+    border: 1px solid #a2b7c8;
+    color: #333;
+    display: block;
+    font-weight: bold;
+    padding: 2px 7px 7px 7px;
+    margin-left: 3px;
+    text-decoration: none;
+}
+.addBtn a
+{
+    background: url(    "../images/AddEmployeeBg.png" ) repeat-x scroll left top transparent;
+    border-left: 1px solid black;
+    color: #FFFFFF;
+    display: block;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 0 5px;
+    text-decoration: none;
+}
+.addBtn a span
+{
+    font-size: 100%;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+.addBtn a img
+{
+    margin: 2px 3px;
+}
+.loggedInUserInfo
+{
+    color: #333333;
+    float: right;
+    font-size: 96%;
+    margin: -1.5em 3em 0 0;
+}
+.maincontaint
+{
+    margin: 0em 0.83em 0.83em 0.83em;
+    width: 98.1%;
+    /*min-width:98.1%;*/
+    float: left;
+    background-color: #FFFFFF;
+    min-height: 450px;
+}
+.mainbdr
+{
+    border: solid 1px #CCCCCC;
+    margin: 0.83em;
+    width: 97.8%;
+    min-height: 400px;
+    float: left;
+}
+/*______________Wrapper_Content______________*/
+
+/*___________Login______________________*/
+dl.loginFrom
+{
+    margin: 7em auto;
+    width: 40%;
+}
+dl.loginFrom dt
+{
+    float: left;
+    font-size: 110%;
+    text-align: right;
+    width: 20%;
+}
+dl.loginFrom dd
+{
+    float: left;
+    width: 65%;
+    margin: 0em 0em 0em 1em;
+}
+
+.button
+{
+    float: left;
+    margin-left: 0em;
+}
+.button a
+{
+    float: left;
+    background: #767879 url(../images/buttonBg1.png) repeat-x left bottom;
+    padding: 5px 10px;
+    display: block;
+    text-align: center;
+    margin-right: 0.5em;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(style/PIE.htc);
+    position: relative;
+    z-index: 0;
+}
+.button a:hover, .button a:active, .button a:focus, .buttonActive
+{
+    background: #096e9c url(../images/buttonBg2.png) repeat-x left top;
+}
+.subbutton input[type=checkbox], dd.subbutton a, dd.subbutton span
+{
+    float: left;
+}
+.subbutton input[type=checkbox]
+{
+    margin-right: 0.5em;
+}
+.subbutton
+{
+    margin-bottom: 0.5em !important;
+}
+.subbutton a
+{
+    text-decoration: none;
+    color: #006699;
+    margin-right: 0.5em;
+    font-size: 12px;
+    margin-right: 1em;
+}
+.subbutton a:hover
+{
+    text-decoration: underline;
+}
+dd.subbuttonTwo a
+{
+    text-decoration: underline;
+    color: #999;
+    margin-right: 0.5em;
+    font-size: 12px;
+    margin-right: 1em;
+}
+dd.subbuttonTwo a:hover
+{
+    text-decoration: none;
+    color: #666;
+}
+/*___________Login______________________*/
+
+/*_________________ForgotPassword______________*/
+.imginfo
+{
+    color: Red;
+    float: left;
+    font-size: 95%;
+    margin: 0.3em 0em;
+}
+.captchaDiv
+{
+    background: url(../images/captcha_bg.jpg) repeat-x center center;
+    float: left;
+    height: 55px;
+    width: 185px;
+}
+.refreshButton
+{
+    margin-left: 0.5em;
+    margin-top: 1em;
+}
+/*_________________ForgotPassword______________*/
+
+/*___________Dearler Registration______________*/
+ul#headerMenu
+{
+    margin: 0em 0em 0em 0em;
+}
+ul#headerMenu li
+{
+    float: left;
+    padding: 0em 0.1em 0em 0em;
+    margin: 0em;
+    background: url(../images/divider.jpg) no-repeat right center;
+}
+ul#headerMenu li a
+{
+    float: left;
+    display: block;
+    text-decoration: none;
+    /*padding: 0.6em 1em 0.7em 1em;*/
+    padding-left: 8px;
+    padding-right: 4px;
+    font-size: 100%;
+    font-weight: bold;
+}
+ul#headerMenu li a:hover, ul#headerMenu li a:focus, ul#headerMenu li a:active, .menuactive
+{
+    display: block;
+    color: #fff;
+    background-color: #2e3b6a;
+}
+/*___________Dearler Registration______________*/
+
+.innerHeader
+{
+    background: url(../images/Nav_bg_hvr.jpg) repeat-x left top;
+    border: 1px solid #161617;
+    height: 2.4em;
+    float: left;
+    margin-left: 0.2em;
+    margin-top: 0.3em;
+    width: 99.25%;
+}
+.innerHeader img, .innerHeader span
+{
+    float: left;
+    margin: 0.3em;
+}
+.innerHeader span
+{
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 125%;
+    margin: 0.3em;
+}
+dl.dealerRagister
+{
+    margin: 0;
+    width: 100%;
+    float: left;
+}
+dl.dealerRagister dt
+{
+    float: left;
+    font-size: 110%;
+    width: 14%;
+}
+dl.dealerRagister dd
+{
+    float: left;
+    width: 80%;
+    margin: 0em 0em 1em 1em;
+}
+dl.dealerRagisterTwo
+{
+    margin: 0;
+    width: 100%;
+    float: left;
+}
+dl.dealerRagisterTwo dt
+{
+    float: left;
+    font-size: 110%;
+}
+dl.dealerRagisterTwo dd
+{
+    float: left;
+    width: 210px;
+    margin: 0em 0em 1em 1em;
+}
+dl.dealerRagisterThree
+{
+    margin: 0;
+    float: left;
+    width: 45.4%;
+}
+dl.dealerRagisterThree dt
+{
+    float: left;
+    font-size: 110%;
+    width: 30.8%;
+    height: 40px;
+}
+dl.dealerRagisterThree dd
+{
+    float: left;
+    height: 40px;
+    width: 60%;
+    margin: 0em 0em 0em 1em;
+}
+.dilContener
+{
+    margin: 2.05em 4em;
+    float: left;
+    width: 90%;
+}
+.dilContenerTwo
+{
+    margin: 20px 25px;
+    float: left;
+}
+.headText
+{
+    width: 100%;
+    margin: 0.5em 0em 1em 0em;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 0em;
+    float: left;
+    line-height: 1.5em;
+}
+.orgText
+{
+    width: 77.5%;
+    text-align: center;
+    background-color: #a4d6ef;
+    font-size: 200%;
+    font-weight: bold;
+    color: #2f3976;
+    padding: 0.5em 0em;
+}
+/*___________Dearler Registration______________*/
+/*______________DealerVerification____________*/
+.popHeader
+{
+    float: left;
+    width: 100%;
+    padding: 0em;
+    background-color: #1587b9;
+    font-family: Verdana;
+    font-size: 110%;
+    color: #FFFFFF;
+    text-indent: 0.7em;
+    font-weight: bold;
+}
+.contentPopUp
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #1587b9;
+    position: fixed;
+    top: 25%;
+    z-index: 1010;
+    left: 100%;
+    margin-left: -70%;
+    width: 380px;
+}
+.contentPopUpDrageble
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #1587b9;
+    position:absolute ;
+    top: 25%;
+    z-index: 1010;
+    left: 100%;
+    margin-left: -70%;
+}
+dl.dealerVerificationPop
+{
+    margin: 2em 1.5em;
+    float: left;
+}
+dl.dealerVerificationPop dt
+{
+    float: left;
+    font-size: 110%;
+    width: 23%;
+}
+dl.dealerVerificationPop dd
+{
+    float: left;
+    width: 60%;
+    margin: 0em 0em 1em 1em;
+}
+/*_____________DealerVerification________________*/
+/*_____________Star Class________________*/
+.star
+{
+    color: #FF0000;
+    float: left;
+}
+dt span, dd span, dt input, dd input
+{
+    float: left;
+}
+/*_____________Star Class________________*/
+
+/*_______________________Dealer_________________*/
+dl.dealerCustom
+{
+    margin: 0em;
+    float: left;
+}
+dl.dealerCustom dt
+{
+    float: left;
+    font-size: 110%;
+}
+dl.dealerCustom dd
+{
+    float: left;
+    margin: 0em 1em 1em 1em;
+}
+.tableGride
+{
+    border-top: 1px solid #737373;
+    border-left: 1px solid #737373;
+    float: left;
+    z-index: 0;
+    margin-top: 20px;
+    background-color: #eff9ff;
+}
+.tableGride th
+{
+    background: #1687b9;
+    padding: 5px 7px;
+    border-right: 1px solid #737373;
+    border-bottom: 1px solid #737373;
+    border-left: 1px solid #737373;
+    border-right: 1px solid #737373;
+    text-align: left;
+    color: #FFFFFF;
+}
+.tableGride .borderRemove
+{
+    border-right: 0px;
+}
+.tableGride th span
+{
+    float: left;
+}
+.tableGride th a
+{
+    color: #fff;
+    float: left;
+    text-decoration: none;
+}
+.tableGride th a:hover
+{
+    color: #fff;
+    text-decoration: none;
+}
+.tableGride td
+{
+    padding: 5px 7px;
+    text-align: left;
+    border-bottom: 1px solid #737373;
+    border-right: 1px solid #737373;
+}
+dl.dealerMake
+{
+    margin: 0;
+    float: left;
+    width: 60em;
+}
+dl.dealerMake dt
+{
+    float: left;
+    font-size: 110%;
+    width: 5em;
+}
+dl.dealerMake dd
+{
+    float: left;
+    width: 21em;
+    margin: 0em 0em 1em 1em;
+}
+
+/*______________________End____________________*/
+
+/*___________________Lead Dealer_________________*/
+
+.popHeader span
+{
+    float: left;
+    margin: 8px 5px 10px 0;
+}
+.popHeader input[type="image"]
+{
+    float: right;
+    margin: 8px;
+}
+.popHeader img
+{
+    float: right;
+}
+dl.settled
+{
+    margin: 0px;
+    float: left;
+    width: 325px;
+}
+dl.settled dt
+{
+    float: left;
+    font-size: 110%;
+    width: 100px;
+    height: 40px;
+}
+dl.settled dd
+{
+    float: left;
+    width: 180px;
+    margin: 0em 0em 0em 1em;
+    height: 40px;
+}
+.footerpaging td
+{
+    background-color: #989898;
+    padding: 4px;
+}
+.footerpaging td table td
+{
+    border: 0px solid #222;
+    padding: 0px;
+}
+.footerpaging td a
+{
+    background-color: #585858;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    margin-right: 3px;
+    padding: 4px 7px;
+    text-decoration: none;
+}
+.footerpaging td a:hover, .footerpaging td a:focus, .footerpaging td a:active
+{
+    background-color: #000;
+}
+.footerpaging td span
+{
+    background-color: #000;
+    color: #fff;
+    display: block;
+    float: left;
+    margin-right: 3px;
+    padding: 4px 7px;
+    text-decoration: none;
+}
+/*___________________Lead Dealer_________________*/
+
+#progressBackgroundFilter
+{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    height: expression(document.body.clientHeight +    "px" );
+    width: expression(document.body.clientWidth +    "px" );
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    z-index: 1000000;
+}
+
+#processMessage
+{
+    position: fixed;
+    top: 30%;
+    left: 41%;
+    padding: 10px;
+    z-index: 1000001;
+    background-color: #fff;
+    border: solid 1px #000;
+    top: expression((document.body.clientHeight * .50) +    "px" );
+}
+
+.allchklist, .allchklist td, .allchklist input, .allchklist label
+{
+    float: left;
+}
+.allchklist input
+{
+    margin-right: 5px;
+}
+.allchklist label
+{
+    margin-right: 10px;
+}
+.tablerView
+{
+    padding: 20px;
+    width: 94.98%;
+    float: left;
+    border: 1px solid #9ed0ef;
+}
+.tablerBtn
+{
+    float: left;
+    width: 99.98%;
+}
+.tablerBtn a
+{
+    color: #000 !important;
+    background: #ccc;
+    padding: 4px 6px;
+    margin-left: 10px;
+    margin-bottom: -1px;
+    border-top: 1px solid #9ed0ef;
+    border-right: 1px solid #9ed0ef;
+    border-left: 1px solid #9ed0ef;
+    float: left;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+    -webkit-border-radius-topright: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-radius-topleft: 4px;
+    behavior: url(ie-css3.htc);
+    position: relative;
+    zoom: 1;
+    text-decoration: none;
+}
+.tablerBtn a:hover, .tablerBtn a:active, .tablerBtn a:focus
+{
+    background: #fff;
+}
+.tablerBtnActive
+{
+    background: #fff !important;
+    border-bottom: 1px solid #fff;
+}
+
+/**************************** Added By Pravin For Page Access's Tree View On 27 May 2013 *********************************/
+.treeview td
+{
+    border: 0px solid #fff;
+    padding: 0px;
+    line-height: normal;
+}
+.treeview td a
+{
+    margin: 2px 5px;
+}
+.treeview table a:first-child
+{
+    margin: 0px;
+}
+.treeview td a, .treeview td input
+{
+    float: left;
+}
+/*********************************************************** Added By Pravin on 19 Jun 2013 For Check Boxes *************************************************/
+.allchklist label
+{
+    margin-right: 10px;
+}
+.allchklist label
+{
+    font-size: 12px;
+}
+.allchklist label, .allchklist input
+{
+    line-height: normal;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+}
+/************************************************************************ END **************************************************/
+
+
+/************************************************************************ END **************************************************/
+
+/****************************************** Added By Pravin On 26 May for Dash Board Alert ***************************************/
+.popMainAll
+{
+    float: right;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+.popMain
+{
+    border: 1px solid #00b3f9;
+    float: left;
+    width: 220px;
+    background-color: #e2f8fa;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-left: 10px;
+}
+/*.popMain tr td
+{
+    margin-right:10px;}*/
+.popAlertHeader
+{
+    background-color: #148dbc;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-radius-topleft: 5px;
+    width: 100%;
+    float: left;
+    height: 25px;
+}
+
+dl.contentComPopMain
+{
+    margin: 0;
+    padding: 0px;
+    float: left;
+}
+dl.contentComPopMain dt
+{
+    float: left;
+    margin: 3px 0px 0px 0px;
+    width: 75px;
+    padding-left: 10px;
+    line-height: 17px;
+    background: url(  "../../App_Themes/Default/Images/site/dot.png" ) no-repeat scroll 1px 3px transparent;
+}
+dl.contentComPopMain dd
+{
+    float: left;
+    line-height: 17px;
+    width: 100px;
+    margin: 3px 0px 0px 0px;
+}
+.popButton
+{
+    float: right;
+}
+.popAlertHeader img
+{
+    padding-left: 3px;
+}
+.popButton input
+{
+    float: left;
+    padding: 6px 7px 6px 0px !important;
+}
+/****************************************** END ***************************************/
+dl.addActivity
+{
+    margin: 0px;
+    float: left;
+    width: 450px;
+}
+dl.addActivity dt
+{
+    float: left;
+    font-size: 110%;
+    width: 80px;
+    height: 40px;
+}
+dl.addActivity dd
+{
+    float: left;
+    width: 120px;
+    margin: 0em 0em 0em 1em;
+    height: 48px;
+}
+dl.addActivityTwo
+{
+    margin: 0px;
+    float: left;
+    width: 450px;
+}
+dl.addActivityTwo dt
+{
+    float: left;
+    font-size: 110%;
+    width: 85px;
+    height: 30px;
+}
+dl.addActivityTwo dd
+{
+    float: left;
+    width: 120px;
+    margin: 0em 0em 0em 1em;
+    height: 30px;
+}
+dl.addActivityThree
+{
+    margin: 0px;
+    float: left;
+}
+dl.addActivityThree dt
+{
+    float: left;
+    font-size: 110%;
+    width: 100px;
+    margin: 0em 0em 1em 0em;
+}
+dl.addActivityThree dd
+{
+    float: left;
+    margin: 0em 0em 1em 1em;
+}
+
+dl.addActivityFour
+{
+    margin: 0px;
+    float: left;
+    width: 470px;
+}
+dl.addActivityFour dt
+{
+    float: left;
+    font-size: 100%;
+    width: 85px;
+    height: 30px;
+}
+dl.addActivityFour dd
+{
+    float: left;
+    width: 370px;
+    margin: 0em 0em 0em 0em;
+    margin-left: 10px;
+    min-height: 30px;
+}
+
+/******************************** Added By Pravin Gholap on 10th July 2013 for Report pages *****************************/
+.panCompny
+{
+    margin: 5px;
+    width: 98%;
+    float: left;
+}
+.tabHeading, .tabHeadingTwo
+{
+    border-bottom: 1px solid #E8EFF7;
+    float: left;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.tabHeadingTwo span
+{
+    color: #7393bb;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 6px;
+}
+.tabHeading span
+{
+    color: #0A48A7;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 6px;
+}
+.tabHeading img, .tabHeadingTwo img
+{
+    float: left;
+}
+.grid
+{
+    width: 100%;
+    float: left;
+    margin: 10px 0px;
+}
+.textImage /*Added By Pravin On 10 July 2013 For Css Of View Graph Button*/
+{
+    background: url("../Images/chart_bar.png") no-repeat scroll left center transparent;
+    color: Black;
+    font: 11px Arial,Helvetica,sans-serif;
+    padding: 4px 5px 4px 22px;
+    display: block;
+    margin-left: 10px;
+}
+a.textImage:hover, a.textImage:active, a.textImage:focus /*Added By Pravin On 10 July 2013 For Css Of View Graph Button*/
+{
+    background: url("../Images/chart_bar.png") no-repeat scroll left center #EAEAD0;
+    padding: 3px 4px 3px 21px;
+    font: 11px Arial,Helvetica,sans-serif;
+    border: 1px solid #9D6833;
+    color: #000000;
+    display: block;
+}
+
+.TextImagePdf /*Added By Pravin On 10 July 2013 For Css Of View Graph Button*/
+{
+    background: url("../Images/doc_pdf.png") no-repeat scroll left center transparent;
+    padding: 1px 5px 1px 22px;
+    font: 11px Arial,Helvetica,sans-serif;
+    display: block;
+    color: Black;
+    margin-left: 10px;
+}
+
+a.TextImagePdf:hover, a.TextImagePdf:active, a.TextImagePdf:focus /*Added By Pravin On 10 July 2013 For Css Of View Graph Button*/
+{
+    background: url("../Images/doc_pdf.png") no-repeat scroll left center #EAEAD0;
+    padding: 3px 4px 3px 21px;
+    border: 1px solid #9D6833;
+    font: 11px Arial,Helvetica,sans-serif;
+    color: #000000;
+    display: block;
+}
+
+.TextImageExcel /*Added By Pravin On 10 July 2013 For Css Of View Graph Button*/
+{
+    background: url("../Images/page_white_excel.png") no-repeat scroll left center transparent;
+    padding: 1px 5px 1px 22px;
+    font: 11px Arial,Helvetica,sans-serif;
+    display: block;
+    color: Black;
+    margin-left: 10px;
+}
+
+a.TextImageExcel:hover, a.TextImageExcel:active, a.TextImageExcel:focus /*Added By Pravin On 10 July 2013 For Css Of View Graph Button*/
+{
+    background: url("../Images/page_white_excel.png") no-repeat scroll left center #EAEAD0;
+    padding: 3px 4px 3px 21px;
+    border: 1px solid #9D6833;
+    font: 11px Arial,Helvetica,sans-serif;
+    color: #000000;
+    display: block;
+}
+
+dl.ProspDetails
+{
+    margin: 0;
+    float: left;
+    width: 46.4%;
+}
+dl.ProspDetails dt
+{
+    float: left;
+    font-size: 110%;
+    width: 34.8%;
+    height: 20px;
+}
+dl.ProspDetails dd
+{
+    float: left;
+    height: 20px;
+    width: 60%;
+    margin: 0em 0em 0em 1em;
+}
+
+dl.ProspAct
+{
+    margin: 0;
+    float: left;
+    width: 46.4%;
+}
+dl.ProspAct dt
+{
+    float: left;
+    font-size: 110%;
+    width: 34.8%;
+    height: 40px;
+}
+dl.ProspAct dd
+{
+    float: left;
+    height: 40px;
+    width: 60%;
+    margin: 0em 0em 0em 1em;
+}
+
+dl.contactDetailsPop
+{
+    margin: 0;
+    float: left;
+    width: 370px;
+}
+dl.contactDetailsPop dt
+{
+    float: left;
+    font-size: 110%;
+    width:130px;
+    height: 40px;
+}
+dl.contactDetailsPop dd
+{
+    float: left;
+    height: 40px;
+    width:220px;
+    margin: 0em 0em 0em 1em;
+}
+
+
+/*-------Created By: Ayyaj Mujawar For Drag Drop Panel...*/
+.contentPopUpDrag
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #1587b9;
+    position: absolute;
+    top: 25%;
+    z-index: 1010;
+    left: 100%;
+    margin-left: -70%;
+    width: 380px;
+}
+
+
+    .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 300px;
+        height: 140px;
+    }
+
+
+.sms-popup{
+    height: 390px;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -200px;
+    position: absolute;
+    top: 50%;
+    width: 600px;
+    z-index: 999;
+    background-color: #FFFFFF;
+}
+
+.ref-popup {
+    background-color: #FFFFFF;
+    margin-left: -189px;
+    margin-top: -133px;
+    position: absolute;
+    top: 50%;
+    width: 380px;
+    z-index: 999;
+}
+
+.sendMail-popup {
+    background-color: #FFFFFF;
+    margin-left: -333px;
+    margin-top: -296px;
+    position: absolute;
+    top: 50%;
+    width: 650px;
+    z-index: 999;
+}
+dl.twocol
+{
+    margin: 0;
+    float: left;
+    width: 90%;
+}
+dl.twocol dt
+{
+    float: left;
+    font-size: 110%;
+    width:45%;
+    min-height: 56px;
+    margin-right:1%
+}
+dl.twocol dd
+{
+    float: left;
+    width: 52%;
+    min-height:56px;
+    margin: 0em 0em 0em 1em;
+}
+dl.twocol2
+{
+    margin: 0;
+    float: left;
+    width: 90%;
+}
+dl.twocol2 dt
+{
+    float: left;
+    font-size: 110%;
+    width:16.5%;
+    min-height: 40px;
+}
+dl.twocol2 dd
+{
+    float: left;
+    width:81%;
+    min-height: 40px;
+    margin: 0em 0em 0em 1em;
+}
+.divfull
+{
+    float: left;
+    width: 90%;
+    min-height:40px;
+    margin: 0em 0em 0em 1em;
+}
+
+input[type=Checkbox]{margin-right:10px;}
+dl.checkboxwrap{margin: 0;
+    float: left;
+    width: 48%;}
+    dl.checkboxwrap dt,dl.checkboxwrap dd{float: left;
+    font-size: 110%;
+    width:49%;
+    height: 40px;
+    margin-left:0px!important;}

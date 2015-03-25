@@ -1,0 +1,42 @@
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.pdb
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\log4net.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\DataAccess.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.pdb
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.pdb
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.dll
+D:\Projects\Private Fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.pdb
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.pdb
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\log4net.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\DataAccess.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.pdb
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.pdb
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\ResolveAssemblyReference.cache
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.dll
+D:\SVNProjects\PrivateFleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.pdb
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.pdb
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\log4net.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\DataAccess.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.pdb
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.pdb
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.csprojResolveAssemblyReference.cache
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.dll
+E:\New Source Code\Source Code\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.pdb

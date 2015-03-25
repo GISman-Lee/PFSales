@@ -1,0 +1,229 @@
+/*---------------------------------------------------------------------------------------------
+				Author : Kiran Darekar - 
+				MechSoft Digital Technology Pvt. Ltd.
+				
+				Sets up some sensible default typography.
+   				The font-size percentage is of 16px. (0.75 * 16px = 12px) 
+------------------------------------------------------------------------------------------------*/
+/*-GLOBAL-*/
+/*-LINK CSS-*/
+@import url('from.css');
+@import url('style.css');
+/*-END-*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-size:100.01%;
+}
+body {
+	font-size: 75%;
+	color: #222;
+	background: #000 url(../images/Body_bg.gif) left top repeat;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Headings
+-------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	color: #111;
+}
+h1 {
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
+}
+h2 {
+	font-size: 2em;
+	margin-bottom: 0.75em;
+}
+h3 {
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+h4 {
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
+}
+h5 {
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
+}
+h6 {
+	font-size: 1em;
+	font-weight: bold;
+}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+	margin: 0;
+}
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, li ol {
+	margin: 0;
+}
+ul, ol {
+	margin: 0;
+}
+ul {
+	list-style-type: disc;
+}
+ol {
+	list-style-type: decimal;
+}
+/*@font-face {
+      font-family:Ubuntu;
+	  src:url('../Website/font/Ubuntu-Light.ttf');
+   }*/
+
+*:focus {
+	outline: none;/* removes ugly dotted border but may make template more unusable, up to you if you want to keep it! */
+}
+.clear {
+	clear: both;
+	float: none;
+}
+form, body, p, h1, h2, h3, h4, table, td, th, ul, ol, li, textarea, input, div, span, a {
+	margin: 0;
+	padding: 0;
+}
+hr {
+	line-height: 1px;
+	width: 100%;
+	clear: both;
+}
+p::selection {
+/*background: #FFA24F;  Safari 
+	color:#FFFFFF;*/
+	}
+p::-moz-selection {
+/*background: #FFA24F;  Firefox 
+	color:#FFFFFF;*/
+}
+/*-END OF GLOBAL-*/
+
+/*-DEFAULT ELEMENT STYLES-*/
+
+a img {
+	border-width: 0px;
+	border: none; /*remove border for linked images*/
+}
+textarea {
+	resize: none; /* All Textaera would not resize */
+}
+/*-END OF DEFAULT ELEMENT STYLES-*/
+
+
+/*-Use Pseudo Classes And pseudo-elements Start-*/
+
+
+/*p:first-line
+{
+    color: #0000ff;
+    font-variant: small-caps;
+}
+*/
+h1:before {
+/* content: url(smiley.gif);*/
+}
+h1:after {
+/* content: url(../Images/bullets.png);*/  
+}
+
+/*-End-*/
+.blurry {
+	color: transparent;
+	text-shadow: 0 0 5px #000000, 3px 0 3px #000000, 0 3px 3px #000000,-3px 0 3px #000000, 0 -3px 3px #000000;
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=4);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+blurry::selection {
+    background:transparent;
+}
+
+blurry::-moz-selection {
+    background:transparent;
+}
+
+blurry::-webkit-selection {
+    background:transparent;
+}
+/*-PAGE PRINT-*/
+@media screen {
+.page-break {
+	border-top: 1px dotted #999999;
+	height: 10px;
+	margin-bottom: 13px;
+}
+}
+/*-PAGE PRINT END-*/
+
+/*_______________Pop_up_______________*/
+.pop-up {
+	z-index:1000;
+	background:#333;
+	width:100%;
+	height:100%;
+	position:fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+	-moz-opacity:0.5;
+}
+/*_______________Pop_up_______________*/
+
+/*_______________Error_______________*/
+.info, .success, .warning, .error, .validation {
+	border: 1px solid;
+	margin: 1em 0px;
+	padding:0.3em;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	float:left;
+	width:60%;
+}
+
+.error {
+	line-height: 25px;
+    padding-left: 3em;
+    text-indent: 10px;
+	background:#ffe7e7 url(../images/error.png) no-repeat 9px 5px;
+	color: #ff0000;
+	border:1px solid #ff8f8f;
+	float:left;
+	width:95%;
+}
+.error span {
+	float:left;
+	margin:0.3em 0em;
+	
+}
+.success {
+	line-height: 25px;
+    padding-left: 3em;
+    text-indent: 10px;
+	background:#d3f3ff url(../images/success.png) no-repeat 5px 5px;
+	color: #2f87ac;
+	border:1px solid #1094c3;
+	float:left;
+	width:95%;
+}
+.success span {
+	float:left;
+	margin:0.3em 0em;
+	
+}
+/*_______________Error_______________*/

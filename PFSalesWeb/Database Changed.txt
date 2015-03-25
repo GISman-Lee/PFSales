@@ -1,0 +1,1 @@
+﻿1. Add TP.Comment as Comment after every TM.Make AS CarMake in storage procedures sp_GetUnalocatedprosDet and sp_GetAllNYCForPFAndFC in database PFSales*;
