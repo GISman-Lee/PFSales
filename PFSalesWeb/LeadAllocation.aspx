@@ -1812,22 +1812,34 @@
                                                     <asp:Label ID="lblPostalCode" runat="server" Text='<%#Bind("Model") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,EmailId %>" Visible="false"
-                                                SortExpression="EmailId">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="lblEmailId" runat="server" Text='<%#Bind("Email1") %>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <%--<asp:TemplateField HeaderText="<%$Resources:PFSalesResource,MobileNo %>" SortExpression="MobileNo">
+                                  
+                            <%--               
+                                      <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,MobileNo %>" SortExpression="MobileNo">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblMobileNo" runat="server" Text='<%#Bind("MobileNo") %>'></asp:Label>
+                                    <asp:Label ID="lblMobileNo" runat="server" Text='<%#Bind("Mobile") %>'></asp:Label>
                                 </ItemTemplate>
-                            </asp:TemplateField>--%>
+                            </asp:TemplateField> 
+                            --%>
+
                                             <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,PhoneNo %>" SortExpression="Phone">
                                                 <ItemTemplate>
                                                     <asp:Label ID="lblPhone" runat="server" Text='<%#Bind("Phone") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
+
+                                            <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,EmailId %>" Visible="true"
+                                                SortExpression="EmailId">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblEmailId" runat="server" Text='<%#Bind("Email1") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+             
+                                            <asp:TemplateField HeaderText="Comment" Visible="true">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblCommentId" runat="server" Text='<%#Bind("Comment") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
                                             <asp:TemplateField HeaderText="<%$Resources:PFSalesResource,Consultant %>" SortExpression="Consultant"
                                                 Visible="false">
                                                 <ItemTemplate>

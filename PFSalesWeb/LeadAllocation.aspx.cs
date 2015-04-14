@@ -3813,6 +3813,7 @@ public partial class LeadAllocation : BasePage
             // objEmailHelper.SMTPUserID = ConfigurationManager.AppSettings["SMTPUserID"].ToString();
             // objEmailHelper.SMTPUserPwd = ConfigurationManager.AppSettings["SMTPUserPwd"].ToString();
             objEmailHelper.EmailToID = emilToId;
+            //objEmailHelper.EmailCcID = "pravin.gholap@mechsoftgroup.com";
             if (IsFleetTeamLead == true)
                 FileContent = "<span style='font-family:Calibri;font-size:14px;color:#1E4996;'>Dear, " + Name.Trim() + "<br /><br /> Please be advised that <b>Fleat Team Leads</b> have been allocated.<br /><br /> Thanks you<br /> Quotacon</span>";
             else
@@ -4547,7 +4548,7 @@ public partial class LeadAllocation : BasePage
             else
                 Session["CurrentPageIndex"] = objProsp.PageIndex = pagerParent.CurrentIndex;
 
-            DataSet Ds = new DataSet();
+            DataSet Ds = new DataSet(); 
             if (Session[Cls_Constant.VIEWSTATE_SORTDIRECTION1] != null && Session[Cls_Constant.VIEWSTATE_SORTEXPRESSION1] != null && !string.IsNullOrEmpty(Convert.ToString(Session[Cls_Constant.VIEWSTATE_SORTDIRECTION1]).Trim()) && !string.IsNullOrEmpty(Convert.ToString(Session[Cls_Constant.VIEWSTATE_SORTEXPRESSION1]).Trim()))
             {
                 if (Convert.ToString(Session[Cls_Constant.VIEWSTATE_SORTDIRECTION1]) == Cls_Constant.VIEWSTATE_ASC)
