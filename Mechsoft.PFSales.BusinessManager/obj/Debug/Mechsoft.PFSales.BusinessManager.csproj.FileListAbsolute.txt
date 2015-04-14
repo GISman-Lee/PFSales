@@ -1,0 +1,14 @@
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessManager.pdb
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\log4net.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\DataAccess.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.BusinessEntity.pdb
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\bin\Debug\Mechsoft.PFSales.DataAccess.pdb
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessManager\obj\Debug\Mechsoft.PFSales.BusinessManager.pdb

@@ -1,0 +1,5 @@
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessEntity\bin\Debug\Mechsoft.PFSales.BusinessEntity.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessEntity\bin\Debug\Mechsoft.PFSales.BusinessEntity.pdb
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessEntity\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessEntity\obj\Debug\Mechsoft.PFSales.BusinessEntity.dll
+C:\Users\Ayyaj Mujawar\Desktop\Private fleet\CRM\PFSales\Mechsoft.PFSales.BusinessEntity\obj\Debug\Mechsoft.PFSales.BusinessEntity.pdb
