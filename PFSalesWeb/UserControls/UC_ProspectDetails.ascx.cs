@@ -13,6 +13,7 @@ using Mechsoft.GeneralUtilities;
 using System.Configuration;
 using ServiceReference1;
 using System.Web.UI.HtmlControls;
+using System.Data.Common;
 
 public partial class UserControls_UC_ProspectDetails : System.Web.UI.UserControl
 {
@@ -43,6 +44,11 @@ public partial class UserControls_UC_ProspectDetails : System.Web.UI.UserControl
                 else
                     lnkCreateQuote.Visible = true;
             }
+        }
+
+        if(BasePage.UserSession.RoleName == "Admin")
+        {
+            this.lblCreateContract.Visible = true;
         }
     }
 
@@ -325,6 +331,62 @@ public partial class UserControls_UC_ProspectDetails : System.Web.UI.UserControl
     protected void lnkbtnSendUnableToConMail_Click(object sender, EventArgs e)
     {
         pnlSendMail.Visible = true; CleraMsg();
+    }
+
+    private DataTable SearchConsultandIdByProspectId(string ProspectId)
+    {
+        DbCommand objCmd = null;
+        DataTable dt = null;
+        try
+        {
+            objCmd = Cls_DataAccess.getInstance().GetCommand(CommandType.StoredProcedure, "SpSearchConsultantIdbyProspectId");
+            Cls_DataAccess.getInstance().AddInParameter(objCmd, "@ProspectId", DbType.Int64, Convert.ToInt64(ProspectId));
+            dt = Cls_DataAccess.getInstance().GetDataTable(objCmd);
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return dt;
+    }
+
+    protected void lnkbtnConfirmOrder_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            DropDownList ddlclrStatus = (DropDownList)this.FindControl("ddlclrStatus");
+            if (ddlclrStatus.SelectedItem.Text == "Client")
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Check function Successful')</script>");
+            }
+            else
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Check function unsuccessful')</script>");
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+    protected void lnkbtnChooseQuote_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            DataTable ProspectInfo = SearchConsultandIdByProspectId(Convert.ToString(hdfProspectId.Value));
+            Response.Redirect("http://quotes.privatefleet.com.au/ViewSentRequests.aspx?" + "ProspectID=" + Convert.ToString(hdfProspectId.Value) + 
+               "&QuoteID=" + Convert.ToString(ViewState["QuoteRequestID"]) + "&ConsID=" + ProspectInfo.Rows[0]["ConsultantId"].ToString());
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+    protected void lnkbtnCreateContract_Click(object sender, EventArgs e)
+    {
+
     }
 
     protected void lnkCreateQuote_Click(object sender, EventArgs e)

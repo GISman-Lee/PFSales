@@ -419,6 +419,8 @@
                             <asp:LinkButton ID="lnkbtnPhPopUpCancel" runat="server" CausesValidation="false"
                                 OnClick="lnkbtnPhPopUpCancel_Click" Visible="false" TabIndex="13" Text="<%$Resources:PFSalesResource,Clear %>"
                                 ToolTip="<%$Resources:PFSalesResource,Clear %>"></asp:LinkButton>
+                            <asp:LinkButton ID="linkbtnConfirmOrder" runat="server"
+                                OnClick="lnkbtnConfirmOrder_Click" Visible="true" TabIndex="13" Text="Confirm Order"></asp:LinkButton>
                         </div>
                         <%-- </div>--%>
                     </div>

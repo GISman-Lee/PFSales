@@ -2193,5 +2193,23 @@ public partial class ManageActivities : BasePage
         BindMangeData();
         return Result;
     }
+
+    protected void lnkbtnConfirmOrder_Click(object sender, EventArgs e)
+    {
+        Miles_Cls_ManageActivities MA = new Miles_Cls_ManageActivities();
+        DataTable VDT_Customer = MA.SearchCustomerByProspectId(Request.QueryString["ProspectId"].ToString());
+        MA.ConfirmOrder(VDT_Customer.Rows[0]["ID"].ToString(), VDT_Customer.Rows[0]["DealerID"].ToString(), VDT_Customer.Rows[0]["ProspectId"].ToString(), VDT_Customer.Rows[0]["DeliveryDate"].ToString());
+        /*
+        if (ddlclrStatus.SelectedItem.Text == "Client")
+        {
+
+        }
+        else
+        {
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Check function UnSuccessful')</script>");
+        }
+         */
+    }
+
     #endregion
 }

@@ -342,18 +342,20 @@
                     <dl id="dlSendMail" runat="server" style="width: 100%; float: left; padding: 10px;">
                         <dt style="width: 95%; float: left; padding-bottom: 10px;">
                             <Edit:Editor ID="EdSendEmail" runat="server" Width="100%" Height="475px" InitialCleanUp="true" />
+                            <dd>
+                            </dd>
+                            <dt>
+                                <div class="button" style="float: left;">
+                                    <asp:LinkButton ID="lnkbtnSendEmail" runat="server" 
+                                        OnClick="lnkbtnSendEmail_Click" 
+                                        Text="<%$ Resources:PFSalesResource,SendEmail %>" 
+                                        ToolTip="<%$ Resources:PFSalesResource,SendEmail %>" 
+                                        ValidationGroup="SendEmail"></asp:LinkButton>
+                                </div>
+                            </dt>
+                            <dd>
+                            </dd>
                         </dt>
-                        <dd>
-                        </dd>
-                        <dt>
-                            <div class="button" style="float: left;">
-                                <asp:LinkButton ID="lnkbtnSendEmail" runat="server" OnClick="lnkbtnSendEmail_Click"
-                                    Text="<%$ Resources:PFSalesResource,SendEmail %>" ToolTip="<%$ Resources:PFSalesResource,SendEmail %>"
-                                    ValidationGroup="SendEmail"></asp:LinkButton>
-                            </div>
-                        </dt>
-                        <dd>
-                        </dd>
                     </dl>
                 </div>
             </asp:Panel>
@@ -379,6 +381,10 @@
             ToolTip="<%$ Resources:PFSalesResource,TradeIn %>" OnClick="lnkbtnTradeIn_Click"></asp:LinkButton>
         <asp:LinkButton ID="lblprintsss" runat="server" OnClientClick="return PrintPanel();"
             Text="Print"></asp:LinkButton>
+        <asp:LinkButton ID="lblChooseQuote" runat="server" OnClick="lnkbtnChooseQuote_Click"
+            Text="Choose Quote"></asp:LinkButton>
+        <asp:LinkButton ID="lblCreateContract" runat="server" OnClick="lnkbtnCreateContract_Click"
+            Text="Create Contract" Visible="false"></asp:LinkButton>
     </div>
     <asp:LinkButton ID="lnkViewQuoteRequest" runat="server" Visible="false" Text="<%$ Resources:PFSalesResource,ViewQuoteRequest %>"
         ToolTip="<%$ Resources:PFSalesResource,SetFinanceRequiredForContact %>" OnClick="lnkViewQuoteRequest_Click"></asp:LinkButton>
